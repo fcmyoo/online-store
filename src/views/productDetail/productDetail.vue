@@ -65,7 +65,6 @@
                                     <a class="btn" id="buy_btn" @click="addShoppingCart">
                                         <i class="iconfont">&#xe600;</i>
                                         加入购物车</a>
-
                                     <a v-if="hasFav" id="fav-btn" class="graybtn" @click="deleteCollect">
                                         <i class="iconfont">&#xe613;</i>已收藏</a>
                                   <a v-else class="graybtn" @click="addCollect">
@@ -149,6 +148,7 @@ import { getGoodsDetail, getFav, addFav, delFav, addShopCart,getShopCart } from 
     created () {
         this.productId = this.$route.params.productId;
         var productId = this.productId
+        console.log(productId+'fav')
         if(cookie.getCookie('token')){
           getFav(productId).then((response)=> {
             this.hasFav = true
@@ -220,9 +220,9 @@ import { getGoodsDetail, getFav, addFav, delFav, addShopCart,getShopCart } from 
           addFav({
               goods: this.productId
           }).then((response)=> {
-                console.log(response.data);
+//                console.log(response.data);
                 this.hasFav = true
-                alert('已成功加入收藏夹');
+//                alert('已成功加入收藏夹');
             }).catch(function (error) {
                 console.log(error);
             });
@@ -231,7 +231,7 @@ import { getGoodsDetail, getFav, addFav, delFav, addShopCart,getShopCart } from 
         deleteCollect () {
             //删除收藏
           delFav(this.productId).then((response)=> {
-            console.log(response.data);
+//            console.log(response.data);
             this.hasFav = false
           }).catch(function (error) {
             console.log(error);

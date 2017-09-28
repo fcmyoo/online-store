@@ -122,7 +122,7 @@
                     id:this.$route.params.id
                   }).then((response)=> {
                     this.cateMenu = response.data.sub_cat;
-                    this.currentCategoryName = response.data;
+                    this.currentCategoryName = response.data.name;
                   }).catch(function (error) {
                     console.log(error);
                   });

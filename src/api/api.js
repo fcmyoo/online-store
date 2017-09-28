@@ -42,7 +42,7 @@ export const getGoods = params => {
 
 //商品详情
 export const getGoodsDetail = goodId => {
-  return axios.get(`${host}/goods/${goodId}` + '/')
+  return axios.get(`${local_host}/goods/${goodId}` + '/')
 }
 
 //获取购物车商品
@@ -64,12 +64,12 @@ export const deleteShopCart = goodsId => {
 
 //收藏
 export const addFav = params => {
-  return axios.post(`${host}/userfavs/`, params)
+  return axios.post(`${local_host}/userfavs/`, params)
 }
 
 //取消收藏
 export const delFav = goodsId => {
-  return axios.delete(`${host}/userfavs/` + goodsId + '/')
+  return axios.delete(`${local_host}/userfavs/` + goodsId + '/')
 }
 
 export const getAllFavs = () => {
@@ -78,7 +78,7 @@ export const getAllFavs = () => {
 
 //判断是否收藏
 export const getFav = goodsId => {
-  return axios.get(`${host}/userfavs/` + goodsId + '/')
+  return axios.get(`${local_host}/userfavs/` + goodsId + '/')
 }
 
 //登录
@@ -89,12 +89,12 @@ export const login = params => {
 //注册
 
 export const register = parmas => {
-  return axios.post(`${host}/users/`, parmas)
+  return axios.post(`${local_host}/users/`, parmas)
 }
 
 //短信
 export const getMessage = parmas => {
-  return axios.post(`${host}/code/`, parmas)
+  return axios.post(`${local_host}/code/`, parmas)
 }
 
 

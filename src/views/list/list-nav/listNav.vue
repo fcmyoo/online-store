@@ -1,7 +1,7 @@
 <template>
     <div class="sidebar">
         <div class="cate-menu" id="cate-menu">
-            <h3 v-if="isObject"><a ><strong>{{currentCategoryName.name}}</strong><i id="total_count">商品共{{proNum}}件</i></a></h3>
+            <h3 v-if="isObject"><a ><strong>{{currentCategoryName}}</strong><i id="total_count">商品共{{proNum}}件</i></a></h3>
             <dl>
                 <template v-for="item in cateMenu">
                     <dt>{{ item.name }}</dt>
@@ -32,9 +32,7 @@
             default: 0
         },
         isArray:{
-            default: function () {
-              return false
-            }
+
         },
         isObject: '',
         currentCategoryName: ""
