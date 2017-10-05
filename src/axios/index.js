@@ -28,12 +28,12 @@ axios.interceptors.response.use(
     let res = error.response;
     switch (res.status) {
       case 401:
-        // 返回 401 清除token信息并跳转到登录页面
+        //返回 401 清除token信息并跳转到登录页面
         // store.commit(types.LOGOUT);
-        //router.replace({
+        // router.replace({
         //  path: '/app/login',
         //  query: {redirect: router.currentRoute.fullPath}
-        //})
+        // })
 		    console.log('未登录 或者token过期');
       case 403:
         console.log('您没有该操作权限');
